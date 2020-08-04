@@ -74,8 +74,15 @@ function install_apps() {
     done
 }
 
+function cleanup() {
+    fancy_echo "Cleaning up old Homebrew formulae!"
+
+    clean_run brew cleanup
+}
+
 install_brew
 update_brew
 install_formulae
 install_packages
 install_apps
+cleanup
