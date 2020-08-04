@@ -2,6 +2,7 @@
 
 formulae=(
     "homebrew/services"
+    "caskroom/cask"
 )
 
 packages=(
@@ -11,6 +12,24 @@ packages=(
     "postgres"
     "mysql"
     "redis"
+)
+
+apps=(
+    "iterm2"
+    "spectacle"
+    "google-chrome"
+    "firefox"
+    "telegram"
+    "skype"
+    "slack"
+    "postman"
+    "spotify"
+    "harvest"
+    "grammarly"
+    "gifox"
+    "visual-studio-code"
+    "whatsapp"
+    "notion"
 )
 
 function install_brew() {
@@ -46,7 +65,17 @@ function install_packages() {
     done
 }
 
+function install_apps() {
+    echo "\n"
+
+    for app in "${apps[@]}"; do
+        fancy_echo "Brew is going to install $app!"
+        clean_run brew cask install "$app"
+    done
+}
+
 install_brew
 update_brew
 install_formulae
 install_packages
+install_apps
