@@ -6,8 +6,10 @@ options=(
     -avh --no-perms
     --exclude ".git"
     --exclude ".gitignore"
+    --exclude "utils.sh"
     --exclude "bootstrap.sh"
     --exclude "brew.sh"
+    --exclude "macos.sh"
 )
 
 # Retrieve all the gitignore file and directories that
@@ -21,7 +23,4 @@ done < .gitignore
 fancy_echo "Copying the dotfiles to the home directory!"
 clean_run rsync "${options[@]}" . ~
 
-# Installations
-source ./brew.sh
-
-# source ~/.bash_profile;
+source ~/.bash_profile;
