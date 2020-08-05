@@ -6,6 +6,6 @@ function fancy_echo() {
     printf "$message\n" "$@"
 }
 
-function clean_run() {
-    eval "$@" >> .bootstrap.log
+function run() {
+    eval "sudo sh -c '$@'" >> .bootstrap.log
 }

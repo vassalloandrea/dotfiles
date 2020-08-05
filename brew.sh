@@ -44,8 +44,8 @@ function install_brew() {
 function update_brew() {
     fancy_echo "Homebrew is about to be updated!"
 
-    clean_run brew update
-    clean_run brew upgrade
+    run brew update
+    run brew upgrade
 }
 
 function install_formulae() {
@@ -61,7 +61,7 @@ function install_packages() {
 
     for command in "${packages[@]}"; do
         fancy_echo "Brew is going to install $command!"
-        clean_run brew install "$command"
+        run brew install "$command"
     done
 }
 
@@ -70,14 +70,14 @@ function install_apps() {
 
     for app in "${apps[@]}"; do
         fancy_echo "Brew is going to install $app!"
-        clean_run brew cask install "$app"
+        run brew cask install "$app"
     done
 }
 
 function cleanup() {
     fancy_echo "Cleaning up old Homebrew formulae!"
 
-    clean_run brew cleanup
+    run brew cleanup
 }
 
 install_brew
