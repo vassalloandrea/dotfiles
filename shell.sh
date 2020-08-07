@@ -29,9 +29,24 @@ function install_omf() {
 
         curl -L https://get.oh-my.fish | fish
     fi
+
+    if [ ! -f "$HOME/.config/omf/init.fish" ]; then
+        touch "$HOME/.config/omf/init.fish"
+    fi  
+}
+
+function install_asdf() {
+    if [ ! -d "$HOME/.asdf" ]; then
+        if ! grep "asdf.fish" "$HOME/.config/omf/init.fish" > /dev/null 2>&1; then 
+            echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/omf/init.fish"
+        fi
+    fi
+
+    source "$HOME/.asdf/asdf.sh"
 }
 
 
 add_fish_to_shells
 update_shell
 install_omf
+install_asdf

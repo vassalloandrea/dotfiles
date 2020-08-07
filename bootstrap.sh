@@ -24,4 +24,11 @@ done < .gitignore
 fancy_echo "Copying the dotfiles to the home directory!"
 run rsync "${options[@]}" . ~
 
+# Install brew with packages and applications
+sh ./brew.sh
+# Apply MacOS changes
+sh ./macos.sh
+# Apply shell changes installing fish
+sh ./shell.sh
+
 source ~/.bash_profile;

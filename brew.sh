@@ -12,6 +12,7 @@ packages=(
     "postgres"
     "mysql"
     "redis"
+    "asdf"
 )
 
 apps=(
