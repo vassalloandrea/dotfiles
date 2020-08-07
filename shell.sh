@@ -41,12 +41,16 @@ function install_asdf() {
             echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/omf/init.fish"
         fi
     fi
-
-    source "$HOME/.asdf/asdf.sh"
 }
 
+function install_asdf_plugins() {
+    run asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+    run asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    run asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+}
 
 add_fish_to_shells
 update_shell
 install_omf
 install_asdf
+install_asdf_plugins 
