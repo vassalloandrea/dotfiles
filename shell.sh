@@ -30,27 +30,49 @@ function install_omf() {
         curl -L https://get.oh-my.fish | fish
     fi
 
-    if [ ! -f "$HOME/.config/omf/init.fish" ]; then
-        touch "$HOME/.config/omf/init.fish"
+    if [ ! -f "$HOME/.config/fish/config.fish" ]; then
+        touch "$HOME/.config/fish/config.fish"
     fi  
 }
 
 function install_asdf() {
     if [ ! -d "$HOME/.asdf" ]; then
-        if ! grep "asdf.fish" "$HOME/.config/omf/init.fish" > /dev/null 2>&1; then 
-            echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/omf/init.fish"
-        fi
+        mkdir "$HOME/.asdf"
+    fi
+
+    fancy_echo "Configuring asdf version manager!"
+
+    if ! grep "asdf.fish" "$HOME/.config/fish/config.fish" > /dev/null 2>&1; then 
+        echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/fish/config.fish"
     fi
 }
 
 function install_asdf_plugins() {
-    run asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-    run asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-    run asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+    fancy_echo "Installing asdf version manager plugins (Ruby, NodeJS and Python)"
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+    asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+}
+
+function install_asdf_language() {
+    local name="$1"
+    local version="$2"
+
+    if ! asdf list "$name" | grep -Fq "$version"; then
+        fancy_echo "Installing $name $version globally using asdf!"
+
+        asdf install "$name" "$version"
+        asdf global "$name" "$version"
+    fi
 }
 
 add_fish_to_shells
 update_shell
 install_omf
 install_asdf
-install_asdf_plugins 
+install_asdf_plugins
+install_asdf_language "ruby" "2.7.1"
+install_asdf_language "nodejs" "14.7.0"
+install_asdf_language "python" "3.8.5"

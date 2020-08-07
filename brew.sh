@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source './utils.sh'
+
 formulae=(
     "homebrew/services"
     "caskroom/cask"
@@ -13,6 +15,8 @@ packages=(
     "mysql"
     "redis"
     "asdf"
+    "gpg"
+    "coreutils"
 )
 
 apps=(
@@ -45,8 +49,8 @@ function install_brew() {
 function update_brew() {
     fancy_echo "Homebrew is about to be updated!"
 
-    run brew update
-    run brew upgrade
+    brew update
+    brew upgrade
 }
 
 function install_formulae() {
@@ -62,7 +66,7 @@ function install_packages() {
 
     for command in "${packages[@]}"; do
         fancy_echo "Brew is going to install $command!"
-        run brew install "$command"
+        brew install "$command"
     done
 }
 
@@ -71,14 +75,14 @@ function install_apps() {
 
     for app in "${apps[@]}"; do
         fancy_echo "Brew is going to install $app!"
-        run brew cask install "$app"
+        brew cask install "$app"
     done
 }
 
 function cleanup() {
     fancy_echo "Cleaning up old Homebrew formulae!"
 
-    run brew cleanup
+    brew cleanup
 }
 
 install_brew
