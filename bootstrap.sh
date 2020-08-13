@@ -24,11 +24,6 @@ done < .gitignore
 fancy_echo "Copying the dotfiles to the home directory!"
 rsync "${options[@]}" . ~
 
-# Update OMF configuration
-fish -c "omf update"
-fish -c "omf install"
-fish -c "omf reload"
-
 # Install brew with packages and applications
 sh ./brew.sh
 # Apply MacOS changes

@@ -20,6 +20,12 @@ abbr r "bundle exec rails server -p 5000"
 abbr c "bundle exec rails console"
 abbr s "bundle exec rspec"
 
+# NodeJS
+abbr wb "./bin/webpack-dev-server"
+
+# Git
+abbr g "git"
+
 # Git aliases
 balias grim "git rebase -i master~1 --autostash"
 balias gri "git rebase -i $1~1 --autostash"
@@ -31,7 +37,7 @@ balias gaa "git add ."
 balias gac "git add . && git commit"
 balias gc "git commit"
 balias gsnap "git add . && git commit -m '[SNAPSHOT]'"
-balias gamend "git add . && git commit --amend --no-edit"
+balias gca "git add . && git commit --amend --no-edit"
 balias gp "git push"
 balias gpf "git push --force"
 balias gco "git checkout"
