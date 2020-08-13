@@ -56,6 +56,17 @@ for app in "${persistent_applications[@]}"; do
   defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
 
+########### Trackpad and mouse ###########
+
+# Enable natural scroll direction
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+
+########### Top corners ###########
+
+# Lock screen when top left hot corner
+defaults write com.apple.dock wvous-tl-corner -int 13
+defaults write com.apple.dock wvous-tl-modifier -int 0
+
 ########### ITerm2 ###########
 
 # Load preferences from a custom directory
