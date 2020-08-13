@@ -29,7 +29,7 @@ abbr g "git"
 # Git aliases
 balias grim "git rebase -i master~1 --autostash"
 balias gri "git rebase -i $1~1 --autostash"
-balias grc "git rebase --continue"
+balias grc "git add . && git rebase --continue"
 balias gra "git rebase --abort"
 balias grs "git rebase --skip"
 balias ga "git add"
