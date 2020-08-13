@@ -11,6 +11,7 @@ options=(
     --exclude "macos.sh"
     --exclude "shell.sh"
     --exclude "utils.sh"
+    --exclude "omf.fish"
 )
 
 # Retrieve all the gitignore file and directories that
@@ -30,3 +31,6 @@ sh ./brew.sh
 sh ./macos.sh
 # Apply shell changes installing fish
 sh ./shell.sh
+
+# Update OMF plugins and aliases
+fish ./omf.fish
