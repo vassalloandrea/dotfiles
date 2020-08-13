@@ -32,7 +32,7 @@ function install_omf() {
 
     if [ ! -f "$HOME/.config/fish/config.fish" ]; then
         touch "$HOME/.config/fish/config.fish"
-    fi  
+    fi
 }
 
 function install_asdf() {
@@ -42,7 +42,7 @@ function install_asdf() {
 
     fancy_echo "Configuring asdf version manager!"
 
-    if ! grep "asdf.fish" "$HOME/.config/fish/config.fish" > /dev/null 2>&1; then 
+    if ! grep "asdf.fish" "$HOME/.config/fish/config.fish" > /dev/null 2>&1; then
         echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/fish/config.fish"
     fi
 }
@@ -68,6 +68,12 @@ function install_asdf_language() {
     fi
 }
 
+function configure_gitignore_globally() {
+    fancy_echo "Configuring git to ignore files globally!"
+
+    git config --global core.excludesFile '~/.gitignore_global'
+}
+
 add_fish_to_shells
 update_shell
 install_omf
@@ -76,3 +82,4 @@ install_asdf_plugins
 install_asdf_language "ruby" "2.7.1"
 install_asdf_language "nodejs" "14.7.0"
 install_asdf_language "python" "3.8.5"
+configure_gitignore_globally
