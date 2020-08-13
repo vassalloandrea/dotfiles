@@ -5,7 +5,3 @@ function fancy_echo() {
 
     printf "$message\n" "$@"
 }
-
-function run() {
-    eval "sudo sh -c '$@'" >> .bootstrap.log
-}

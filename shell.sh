@@ -7,7 +7,7 @@ function add_fish_to_shells() {
     if ! grep "$(which fish)" /etc/shells > /dev/null 2>&1; then
         fancy_echo "Adding fish to the legacy shells!"
 
-        run "echo $(which fish) >> /etc/shells"
+        echo $(which fish) >> /etc/shells
     fi
 }
 
@@ -18,7 +18,7 @@ function update_shell() {
         if which fish > /dev/null 2>&1; then
             fancy_echo "Changing your shell to fish!"
 
-            run chsh -s $(which fish) $USER
+            chsh -s $(which fish) $USER
         fi
     fi
 }

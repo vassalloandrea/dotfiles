@@ -22,7 +22,7 @@ done < .gitignore
 # Copy all the files and directories to the user home
 # except for the ones included in the options array
 fancy_echo "Copying the dotfiles to the home directory!"
-run rsync "${options[@]}" . ~
+rsync "${options[@]}" . ~
 
 # Install brew with packages and applications
 sh ./brew.sh
