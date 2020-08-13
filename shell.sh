@@ -29,22 +29,6 @@ function install_omf() {
 
         curl -L https://get.oh-my.fish | fish
     fi
-
-    if [ ! -f "$HOME/.config/fish/config.fish" ]; then
-        touch "$HOME/.config/fish/config.fish"
-    fi
-}
-
-function install_asdf() {
-    if [ ! -d "$HOME/.asdf" ]; then
-        mkdir "$HOME/.asdf"
-    fi
-
-    fancy_echo "Configuring asdf version manager!"
-
-    if ! grep "asdf.fish" "$HOME/.config/fish/config.fish" > /dev/null 2>&1; then
-        echo "source (brew --prefix asdf)/asdf.fish" > "$HOME/.config/fish/config.fish"
-    fi
 }
 
 function install_asdf_plugins() {
@@ -77,7 +61,6 @@ function configure_gitignore_globally() {
 add_fish_to_shells
 update_shell
 install_omf
-install_asdf
 install_asdf_plugins
 install_asdf_language "ruby" "2.7.1"
 install_asdf_language "nodejs" "14.7.0"

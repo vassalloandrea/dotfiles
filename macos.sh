@@ -11,7 +11,7 @@ persistent_applications=(
     "/Applications/Telegram.app"
     "/Applications/Slack.app"
     "/System/Applications/System Preferences.app"
-    "/Applications/Harvest.app"
+    "/Applications/Harvest(Legacy).app"
     "/Applications/Spotify.app"
     "/Applications/Notion.app"
 )
