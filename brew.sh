@@ -17,6 +17,9 @@ packages=(
     "asdf"
     "gpg"
     "coreutils"
+    "imagemagick"
+    "heroku/brew/heroku"
+    "the_silver_searcher"
 )
 
 apps=(
