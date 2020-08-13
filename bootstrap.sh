@@ -30,5 +30,3 @@ sh ./brew.sh
 sh ./macos.sh
 # Apply shell changes installing fish
 sh ./shell.sh
-
-source ~/.bash_profile;
