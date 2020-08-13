@@ -56,4 +56,11 @@ for app in "${persistent_applications[@]}"; do
   defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
 
+########### ITerm2 ###########
+
+# Load preferences from a custom directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# Specify the custom directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
+
 killall Dock

@@ -54,6 +54,15 @@ balias createuser "createuser -s -d -R"
 # Set vim on fish
 fish_vi_key_bindings
 
+# Functions
+function itermbackup
+  cp "$HOME/.iterm2/com.googlecode.iterm2.plist" "$HOME/projects/personal/dotfiles/.iterm2/com.googlecode.iterm2.plist"
+  cd "$HOME/projects/personal/dotfiles"
+  git add "$HOME/projects/personal/dotfiles/.iterm2/com.googlecode.iterm2.plist"
+  git commit -m "Update ITerm2 configuration"
+  git push
+end
+
 function gri --argument commit_id
   eval "git rebase -i $commit_id~1 --autostash"
 end
