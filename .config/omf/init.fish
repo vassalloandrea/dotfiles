@@ -72,3 +72,8 @@ end
 function gri --argument commit_id
   eval "git rebase -i $commit_id~1 --autostash"
 end
+
+# Automatically run ls after cd
+function cd --argument dirs
+  eval "builtin cd $dirs && ls -a"
+end
