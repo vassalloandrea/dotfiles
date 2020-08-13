@@ -52,6 +52,11 @@ function install_asdf_language() {
     fi
 }
 
+function install_fzf() {
+    bash -c "$(brew --prefix)/opt/fzf/install --no-bash --no-zsh --key-bindings --completion --update-rc"
+    fish -c fzf_key_bindings
+}
+
 function configure_gitignore_globally() {
     fancy_echo "Configuring git to ignore files globally!"
 
@@ -65,4 +70,5 @@ install_asdf_plugins
 install_asdf_language "ruby" "2.7.1"
 install_asdf_language "nodejs" "14.7.0"
 install_asdf_language "python" "3.8.5"
+install_fzf
 configure_gitignore_globally

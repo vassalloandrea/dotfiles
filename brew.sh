@@ -20,6 +20,7 @@ packages=(
     "imagemagick"
     "heroku/brew/heroku"
     "the_silver_searcher"
+    "fzf"
 )
 
 apps=(
