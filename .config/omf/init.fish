@@ -22,13 +22,14 @@ abbr s "bundle exec rspec"
 
 # NodeJS
 abbr wb "./bin/webpack-dev-server"
+abbr nd "npm run dev"
 
 # Git
 abbr g "git"
 
 # Git aliases
-balias grim "git rebase -i master~1 --autostash"
-balias gri "git rebase -i $1~1 --autostash"
+balias grm "git rebase master --autostash"
+balias grim "git rebase -i master --autostash"
 balias grc "git add . && git rebase --continue"
 balias gra "git rebase --abort"
 balias grs "git rebase --skip"
@@ -38,11 +39,14 @@ balias gac "git add . && git commit"
 balias gc "git commit"
 balias gsnap "git add . && git commit -m '[SNAPSHOT]'"
 balias gca "git add . && git commit --amend --no-edit"
+balias gcae "git add . && git commit --amend"
 balias gp "git push"
 balias gpf "git push --force"
+balias gpl "git pull"
 balias gco "git checkout"
 balias gcon "git checkout -b"
 balias gl "git log"
+balias gs "git status"
 
 # Utility aliases
 balias eh "sudo vim /etc/hosts"
