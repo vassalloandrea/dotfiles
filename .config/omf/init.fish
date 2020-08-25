@@ -53,6 +53,9 @@ balias gco "git checkout"
 balias gcon "git checkout -b"
 balias gl "git log"
 balias gs "git status"
+balias gres "git reset --soft HEAD~1"
+balias greh "git reset --hard HEAD~1"
+balias grehom "git reset --hard origin/master"
 
 # Utility aliases
 balias eh "sudo vim /etc/hosts"
@@ -90,4 +93,10 @@ end
 
 function rollback --argument migration_id
   eval "bundle exec rails db:rollback VERSION=$migration_id"
+end
+
+function update_aliases
+  cp /Users/andreavassallo/projects/personal/dotfiles/.config/omf/init.fish ~/.config/omf/init.fish
+  omf update
+  reload
 end
