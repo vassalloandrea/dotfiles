@@ -21,6 +21,7 @@ packages=(
     "heroku/brew/heroku"
     "the_silver_searcher"
     "fzf"
+    "php"
 )
 
 apps=(
