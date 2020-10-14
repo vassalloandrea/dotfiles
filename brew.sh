@@ -5,6 +5,7 @@ source './utils.sh'
 formulae=(
     "homebrew/services"
     "caskroom/cask"
+    "mongodb/brew"
 )
 
 packages=(
@@ -22,6 +23,7 @@ packages=(
     "the_silver_searcher"
     "fzf"
     "php"
+    "mongodb-community"
 )
 
 apps=(
