@@ -25,6 +25,9 @@ abbr migrate "bundle exec rails db:migrate"
 abbr wb "./bin/webpack-dev-server"
 abbr nd "npm run dev"
 
+# PHP
+abbr psl "php -S localhost:8080 -t public"
+
 # Git
 abbr g "git"
 
@@ -66,6 +69,7 @@ balias mkdir "mkdir -p"
 balias cdn "cd ~/projects/nebulab"
 balias cdp "cd ~/projects/personal"
 balias cda "cd ~/projects/app2u"
+balias cdi "cd ~/projects/ied"
 
 # Postgresql alias
 balias createuser "createuser -s -d -R"
