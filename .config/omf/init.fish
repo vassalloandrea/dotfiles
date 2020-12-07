@@ -17,6 +17,7 @@ abbr buc "bundle update --conservative"
 
 # Ruby/Rails
 abbr r "bundle exec rails server -p 5000"
+abbr rp "PORT=5000 bundle exec puma -C config/puma.rb"
 abbr c "bundle exec rails console"
 abbr s "bundle exec rspec"
 abbr migrate "bundle exec rails db:migrate"
