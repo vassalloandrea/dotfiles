@@ -42,6 +42,7 @@ apps=(
     "visual-studio-code"
     "whatsapp"
     "notion"
+    "mattermost"
 )
 
 function install_brew() {
