@@ -32,6 +32,9 @@ abbr psl "php -S localhost:8080 -t public"
 # Git
 abbr g "git"
 
+# Unix
+abbr up "lsof -i -P -n | grep"
+
 # Ruby/Rails aliases
 balias migrate "bundle exec rails db:migrate"
 balias routes "bundle exec rails routes | fzf"
@@ -104,4 +107,8 @@ function update_aliases
   cp /Users/andreavassallo/projects/personal/dotfiles/.config/omf/init.fish ~/.config/omf/init.fish
   omf update
   reload
+end
+
+function kill_port --argument port
+  kill (lsof -t -i:$port)
 end
