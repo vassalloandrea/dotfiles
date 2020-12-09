@@ -112,3 +112,8 @@ end
 function kill_port --argument port
   kill (lsof -t -i:$port)
 end
+
+function reload_postgres
+  rm /usr/local/var/postgres/postmaster.pid
+  brew services restart postgresql
+end
