@@ -42,6 +42,7 @@ balias tasks "bundle exec rails -T"
 
 # Git aliases
 balias grm "git rebase master --autostash"
+balias grd "git rebase develop --autostash"
 balias grim "git rebase -i master --autostash"
 balias grc "git add . && git rebase --continue"
 balias gra "git rebase --abort"
@@ -56,6 +57,7 @@ balias gcae "git add . && git commit --amend"
 balias gps "git push"
 balias gpsf "git push --force"
 balias gpl "git pull"
+balias gplr "git pull --rebase"
 balias gco "git checkout"
 balias gcon "git checkout -b"
 balias gl "git log"
@@ -74,6 +76,7 @@ balias cdn "cd ~/projects/nebulab"
 balias cdp "cd ~/projects/personal"
 balias cda "cd ~/projects/app2u"
 balias cdi "cd ~/projects/ied"
+balias cdb "cd ~/projects/bsmart"
 
 # Postgresql alias
 balias createuser "createuser -s -d -R"

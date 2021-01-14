@@ -24,6 +24,8 @@ packages=(
     "fzf"
     "php"
     "mongodb-community"
+    "k9s"
+    "aws-iam-authenticator"
 )
 
 apps=(
@@ -43,6 +45,7 @@ apps=(
     "whatsapp"
     "notion"
     "mattermost"
+    "tunnelblick"
 )
 
 function install_brew() {
