@@ -35,9 +35,9 @@ function install_asdf_plugins() {
     fancy_echo "Installing asdf version manager plugins (Ruby, NodeJS and Python)"
 
     asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-    asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    asdf plugin-add python
+    asdf plugin-add php https://github.com/asdf-community/asdf-php.git
 }
 
 function install_asdf_language() {
@@ -67,8 +67,10 @@ add_fish_to_shells
 update_shell
 install_omf
 install_asdf_plugins
-install_asdf_language "ruby" "2.7.1"
-install_asdf_language "nodejs" "14.7.0"
-install_asdf_language "python" "3.8.5"
+install_asdf_language "ruby" "3.0.2"
+install_asdf_language "nodejs" "lts"
+install_asdf_language "python" "3.10.0"
+set -xg PHP_WITHOUT_PEAR "yes" # needed to install php with asdf
+install_asdf_language "php" "8.0.12"
 install_fzf
 configure_gitignore_globally

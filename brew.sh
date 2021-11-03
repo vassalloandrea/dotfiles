@@ -10,6 +10,16 @@ formulae=(
 
 packages=(
     "mas"
+    "adoptopenjdk/openjdk/adoptopenjdk8" # needed to react native
+    "gawk" # needed for asdf nodejs
+    "gmp" # needed for asdf php
+    "libsodium" # needed for asdf php
+    "bison" # needed for asdf php
+    "re2c" # needed for asdf php
+    "libgd" # needed for asdf php
+    "libiconv" # needed for asdf php
+    "oniguruma" # needed for asdf php
+    "libzip" # needed for asdf php
     "git"
     "fish"
     "hub"
@@ -19,34 +29,34 @@ packages=(
     "asdf"
     "gpg"
     "coreutils"
-    "imagemagick"
+    "imagemagick" # needed for asdf php
     "heroku/brew/heroku"
     "the_silver_searcher"
     "fzf"
-    "php"
     "mongodb-community"
-    "k9s"
     "aws-iam-authenticator"
+    "watchman"
 )
 
 apps=(
+    "docker"
+    "cleanmymac"
     "iterm2"
     "spectacle"
     "google-chrome"
     "firefox"
+    "loom"
+    "discord"
     "telegram"
     "skype"
     "slack"
     "postman"
     "spotify"
-    "harvest"
-    "grammarly"
     "gifox"
     "visual-studio-code"
+    "android-studio"
     "whatsapp"
-    "notion"
-    "mattermost"
-    "tunnelblick"
+    "1password"
 )
 
 function install_brew() {
