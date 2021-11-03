@@ -9,6 +9,7 @@ formulae=(
 )
 
 packages=(
+    "mas"
     "git"
     "fish"
     "hub"

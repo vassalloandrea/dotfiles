@@ -27,6 +27,8 @@ rsync "${options[@]}" . ~
 
 # Install brew with packages and applications
 sh ./brew.sh
+# Install apple store applications
+sh ./mas.sh
 # Apply MacOS changes
 sh ./macos.sh
 # Apply shell changes installing fish
