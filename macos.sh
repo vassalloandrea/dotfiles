@@ -5,15 +5,20 @@ persistent_applications=(
     "/Applications/Safari.app"
     "/Applications/Google Chrome.app"
     "/System/Applications/Calendar.app"
+    "/Applications/Docker.app"
+    "/Applications/Harvest.app"
     "/Applications/iTerm.app"
     "/Applications/Visual Studio Code.app"
     "/Applications/WhatsApp.app"
     "/Applications/Telegram.app"
     "/Applications/Slack.app"
+    "/Applications/Loom.app"
+    "/Applications/Discord.app"
+    "/Applications/Spark.app"
     "/System/Applications/System Preferences.app"
-    "/Applications/Harvest(Legacy).app"
     "/Applications/Spotify.app"
-    "/Applications/Notion.app"
+    "/Applications/1Password 7.app"
+    "/Applications/Xcode.app"
 )
 
 ########### UI ###########
