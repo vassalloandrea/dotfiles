@@ -8,6 +8,7 @@ options=(
     --exclude ".gitignore"
     --exclude "bootstrap.sh"
     --exclude "brew.sh"
+    --exclude "mas.sh"
     --exclude "macos.sh"
     --exclude "shell.sh"
     --exclude "utils.sh"
