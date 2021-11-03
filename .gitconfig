@@ -3,6 +3,8 @@
   email = andrea.vassallo.94@gmail.com
 [github]
   user = vassalloandrea
+[init]
+  defaultBranch = main
 [hub]
   protocol = https
 [credential]
