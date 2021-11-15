@@ -57,6 +57,7 @@ apps=(
     "android-studio"
     "whatsapp"
     "1password"
+    "imageoptim"
 )
 
 function install_brew() {
