@@ -87,6 +87,11 @@ balias cdi "cd ~/projects/ied"
 # Postgresql alias
 balias createuser "createuser -s -d -R"
 
+# Heroku alias
+balias hal "heroku accounts"
+balias han "heroku accounts:set nebulab"
+balias hap "heroku accounts:set personal"
+
 # Set vim on fish
 fish_vi_key_bindings
 

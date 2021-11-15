@@ -34,6 +34,8 @@ sh ./mas.sh
 sh ./macos.sh
 # Apply shell changes installing fish
 sh ./shell.sh
+# Configure heroku
+sh ./heroku.sh
 
 # Update OMF plugins and aliases
 fish ./omf.fish
