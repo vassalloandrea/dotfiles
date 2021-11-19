@@ -7,7 +7,7 @@ function add_fish_to_shells() {
     if ! grep "$(which fish)" /etc/shells > /dev/null 2>&1; then
         fancy_echo "Adding fish to the legacy shells!"
 
-        echo $(which fish) >> /etc/shells
+        sudo bash -c "echo $(which fish) >> /etc/shells"
     fi
 }
 
@@ -70,7 +70,7 @@ install_asdf_plugins
 install_asdf_language "ruby" "3.0.2"
 install_asdf_language "nodejs" "lts"
 install_asdf_language "python" "3.10.0"
-set -xg PHP_WITHOUT_PEAR "yes" # needed to install php with asdf
-install_asdf_language "php" "8.0.12"
+# export PHP_WITHOUT_PEAR="yes" # needed to install php with asdf
+# install_asdf_language "php" "8.0.12"
 install_fzf
 configure_gitignore_globally

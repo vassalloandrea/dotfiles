@@ -15,6 +15,7 @@ persistent_applications=(
     "/Applications/Loom.app"
     "/Applications/Discord.app"
     "/Applications/Spark.app"
+    "/Applications/ImageOptim.app"
     "/System/Applications/System Preferences.app"
     "/Applications/Spotify.app"
     "/Applications/1Password 7.app"

@@ -118,7 +118,7 @@ function rollback --argument migration_id
 end
 
 function update_aliases
-  cp /Users/vassalloandrea/dotfiles/.config/omf/init.fish ~/.config/omf/init.fish
+  cp $HOME/projects/personal/dotfiles/.config/omf/init.fish ~/.config/omf/init.fish
   omf update
   reload
 end
@@ -134,6 +134,8 @@ end
 
 function install_android_sdk
   # Install SDKs for react native
+  # You need to install and configure Android studio before
+  update_aliases
   sdkmanager "platforms;android-29" "system-images;android-29;default;x86_64" "system-images;android-29;google_apis;x86"
   sdkmanager "cmdline-tools;latest" "build-tools;29.0.2"
 end

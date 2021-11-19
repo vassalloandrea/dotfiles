@@ -4,7 +4,7 @@ source './utils.sh'
 
 formulae=(
     "homebrew/services"
-    "caskroom/cask"
+    "homebrew/cask"
     "mongodb/brew"
 )
 
@@ -65,7 +65,7 @@ function install_brew() {
         fancy_echo "Homebrew is already installed!"
     else
         fancy_echo "Homebrew is about to be installed!"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 }
 
@@ -81,6 +81,7 @@ function install_formulae() {
 
     for formula in "${formulae[@]}"; do
         fancy_echo "Installing brew formulae $formula!"
+	    brew tap "$formula"
     done
 }
 
@@ -98,7 +99,7 @@ function install_apps() {
 
     for app in "${apps[@]}"; do
         fancy_echo "Brew is going to install $app!"
-        brew cask install "$app"
+        brew install --cask "$app"
     done
 }
 
