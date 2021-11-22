@@ -11,6 +11,7 @@ apps=(
     "1176895641" # Spark
     "506189836" # Harvest
     "585829637" # Todoist
+    "409201541" # Pages
 )
 
 function install_mas() {
