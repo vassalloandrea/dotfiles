@@ -29,7 +29,7 @@ packages=(
     "asdf"
     "gpg"
     "coreutils"
-    "imagemagick" # needed for asdf php
+    "imagemagick@6"
     "heroku/brew/heroku"
     "the_silver_searcher"
     "fzf"
@@ -59,6 +59,10 @@ apps=(
     "1password"
     "imageoptim"
     "notion"
+)
+
+links=(
+    "imagemagick@6"
 )
 
 function install_brew() {
@@ -104,6 +108,15 @@ function install_apps() {
     done
 }
 
+function link_packages() {
+    echo "\n"
+
+    for link in "${links[@]}"; do
+        fancy_echo "Brew is going to link $link!"
+        brew link "$link" --force
+    done
+}
+
 function cleanup() {
     fancy_echo "Cleaning up old Homebrew formulae!"
 
@@ -115,4 +128,5 @@ update_brew
 install_formulae
 install_packages
 install_apps
+link_packages
 cleanup
