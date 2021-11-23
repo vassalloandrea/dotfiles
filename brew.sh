@@ -58,6 +58,7 @@ apps=(
     "whatsapp"
     "1password"
     "imageoptim"
+    "notion"
 )
 
 function install_brew() {

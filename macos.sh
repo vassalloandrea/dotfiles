@@ -13,6 +13,7 @@ persistent_applications=(
     "/Applications/Telegram.app"
     "/Applications/Slack.app"
     "/Applications/Loom.app"
+    "/Applications/Notion.app"
     "/Applications/Discord.app"
     "/Applications/Spark.app"
     "/Applications/ImageOptim.app"
