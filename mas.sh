@@ -12,6 +12,7 @@ apps=(
     "506189836" # Harvest
     "585829637" # Todoist
     "409201541" # Pages
+    "1474276998" # HP smart
 )
 
 function install_mas() {
