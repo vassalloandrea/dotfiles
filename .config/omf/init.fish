@@ -24,10 +24,10 @@ abbr buc "bundle update --conservative"
 
 # Ruby/Rails
 abbr r "bundle exec rails server -p 5000"
+abbr rf "bundle exec foreman start -f Procfile.local"
 abbr rp "PORT=5000 bundle exec puma -C config/puma.rb"
 abbr c "bundle exec rails console"
 abbr s "bundle exec rspec"
-abbr migrate "bundle exec rails db:migrate"
 
 # NodeJS
 abbr wb "./bin/webpack-dev-server"
@@ -39,8 +39,8 @@ abbr psl "php -S localhost:8080 -t public"
 # Git
 abbr g "git"
 
-# Unix
-abbr up "lsof -i -P -n | grep"
+# Heroku
+abbr hr "heroku run"
 
 # Ruby/Rails aliases
 balias migrate "bundle exec rails db:migrate"
