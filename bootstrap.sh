@@ -9,10 +9,12 @@ options=(
     --exclude "bootstrap.sh"
     --exclude "brew.sh"
     --exclude "mas.sh"
+    --exclude "custom_app.sh"
     --exclude "macos.sh"
     --exclude "shell.sh"
     --exclude "utils.sh"
     --exclude "omf.fish"
+    --exclude "cx"
 )
 
 # Retrieve all the gitignore file and directories that
@@ -30,6 +32,8 @@ rsync "${options[@]}" . ~
 sh ./brew.sh
 # Install apple store applications
 sh ./mas.sh
+# Custom installations
+sh ./custom_app.sh
 # Apply MacOS changes
 sh ./macos.sh
 # Apply shell changes installing fish
