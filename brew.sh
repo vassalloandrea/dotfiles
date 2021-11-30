@@ -59,6 +59,7 @@ apps=(
     "1password"
     "imageoptim"
     "notion"
+    "remotion"
 )
 
 links=(
