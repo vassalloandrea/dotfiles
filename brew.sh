@@ -36,6 +36,7 @@ packages=(
     "mongodb-community"
     "aws-iam-authenticator"
     "watchman"
+    "ngrok"
 )
 
 apps=(
