@@ -61,6 +61,7 @@ apps=(
     "imageoptim"
     "notion"
     "remotion"
+    "flutter"
 )
 
 links=(

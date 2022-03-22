@@ -10,6 +10,7 @@ set -xg PATH "$PATH:$ANDROID_HOME/emulator"
 set -xg PATH "$PATH:$ANDROID_HOME/tools"
 set -xg PATH "$PATH:$ANDROID_HOME/tools/bin"
 set -xg PATH "$PATH:$ANDROID_HOME/platform-tools"
+set -xg JAVA_HOME "/usr/bin"
 
 # Git/Hub
 eval (hub alias -s)
