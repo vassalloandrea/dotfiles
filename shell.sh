@@ -67,9 +67,9 @@ add_fish_to_shells
 update_shell
 install_omf
 install_asdf_plugins
-install_asdf_language "ruby" "3.0.2"
+install_asdf_language "ruby" "3.1.1"
 install_asdf_language "nodejs" "lts"
-install_asdf_language "python" "3.10.0"
+install_asdf_language "python" "3.10.3"
 # export PHP_WITHOUT_PEAR="yes" # needed to install php with asdf
 # install_asdf_language "php" "8.0.12"
 install_fzf
