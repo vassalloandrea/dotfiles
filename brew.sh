@@ -10,16 +10,8 @@ formulae=(
 
 packages=(
     "mas"
-    "adoptopenjdk/openjdk/adoptopenjdk8" # needed to react native
+    "adoptopenjdk/openjdk/adoptopenjdk11" # needed to react native
     "gawk" # needed for asdf nodejs
-    "gmp" # needed for asdf php
-    "libsodium" # needed for asdf php
-    "bison" # needed for asdf php
-    "re2c" # needed for asdf php
-    "libgd" # needed for asdf php
-    "libiconv" # needed for asdf php
-    "oniguruma" # needed for asdf php
-    "libzip" # needed for asdf php
     "git"
     "fish"
     "hub"
@@ -40,14 +32,12 @@ packages=(
 )
 
 apps=(
-    "docker"
     "cleanmymac"
     "iterm2"
     "spectacle"
     "google-chrome"
     "firefox"
     "loom"
-    "discord"
     "telegram"
     "skype"
     "slack"

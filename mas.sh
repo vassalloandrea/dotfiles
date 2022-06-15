@@ -4,15 +4,13 @@ source './utils.sh'
 
 apps=(
     "1510445899" # Meeter
-    "1462114288" # Grammarly for Safari
     "595191960" # CopyClip
-    "1402042596" # AdBlock
     "497799835" # Xcode
     "1176895641" # Spark
     "506189836" # Harvest
-    "585829637" # Todoist
     "409201541" # Pages
-    "1474276998" # HP smart
+    "1193539993" # Brother iPrint&Scan
+    "905953485" # NordVPN
 )
 
 function install_mas() {

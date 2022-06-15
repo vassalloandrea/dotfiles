@@ -9,8 +9,11 @@ set -xg ANDROID_HOME "$HOME/Library/Android/sdk"
 set -xg PATH "$PATH:$ANDROID_HOME/emulator"
 set -xg PATH "$PATH:$ANDROID_HOME/tools"
 set -xg PATH "$PATH:$ANDROID_HOME/tools/bin"
+set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools"
+set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools/latest"
+set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 set -xg PATH "$PATH:$ANDROID_HOME/platform-tools"
-set -xg JAVA_HOME "/usr/bin"
+set -xg JAVA_HOME (/usr/libexec/java_home)
 
 # Git/Hub
 eval (hub alias -s)
@@ -30,6 +33,11 @@ abbr rp "PORT=5000 bundle exec puma -C config/puma.rb"
 abbr c "bundle exec rails console"
 abbr s "bundle exec rspec"
 
+# Heroku
+abbr hc "heroku run bundle exec rails console"
+abbr hdm "heroku run bundle exec rails data:migrate"
+abbr hsm "heroku run bundle exec rails db:migrate"
+
 # NodeJS
 abbr wb "./bin/webpack-dev-server"
 abbr nd "npm run dev"
@@ -44,7 +52,9 @@ abbr g "git"
 abbr hr "heroku run"
 
 # Ruby/Rails aliases
-balias migrate "bundle exec rails db:migrate"
+balias dm "bundle exec rails data:migrate"
+balias sm "bundle exec rails db:migrate"
+balias smm "bundle exec rails g migration"
 balias routes "bundle exec rails routes | fzf"
 balias tasks "bundle exec rails -T"
 
@@ -137,6 +147,17 @@ function install_android_sdk
   # Install SDKs for react native
   # You need to install and configure Android studio before
   update_aliases
-  sdkmanager "platforms;android-29" "system-images;android-29;default;x86_64" "system-images;android-29;google_apis;x86"
-  sdkmanager "cmdline-tools;latest" "build-tools;29.0.2"
+  sdkmanager "platforms;android-30" "system-images;android-30;default;x86_64" "system-images;android-30;google_apis;x86"
+  sdkmanager "cmdline-tools;latest" "build-tools;30.0.2"
+end
+
+function setup_rn_env
+  asdf plugin-remove nodejs
+end
+
+function setup_nebulab_env
+  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf install nodejs lts
+  asdf global nodejs lts
+  asdf install nodejs 16.13.1
 end

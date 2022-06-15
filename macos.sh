@@ -5,7 +5,6 @@ persistent_applications=(
     "/Applications/Safari.app"
     "/Applications/Google Chrome.app"
     "/System/Applications/Calendar.app"
-    "/Applications/Docker.app"
     "/Applications/Harvest.app"
     "/Applications/iTerm.app"
     "/Applications/Visual Studio Code.app"
@@ -14,13 +13,14 @@ persistent_applications=(
     "/Applications/Slack.app"
     "/Applications/Loom.app"
     "/Applications/Notion.app"
-    "/Applications/Discord.app"
     "/Applications/Spark.app"
     "/Applications/ImageOptim.app"
     "/System/Applications/System Preferences.app"
     "/Applications/Spotify.app"
     "/Applications/1Password 7.app"
     "/Applications/Xcode.app"
+    "/Applications/NordVPN.app"
+    "/Applications/Brother iPrint&Scan.app"
 )
 
 ########### UI ###########
@@ -55,8 +55,6 @@ defaults write com.apple.dock tilesize -int 36
 defaults write com.apple.dock persistent-apps -array
 # Do not show recent application
 defaults write com.apple.dock show-recents -bool false
-# Change the orientation to the right
-defaults write com.apple.dock orientation -string "right"
 
 # Add persistent applications
 for app in "${persistent_applications[@]}"; do
