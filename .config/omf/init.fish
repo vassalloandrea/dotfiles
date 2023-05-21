@@ -97,6 +97,8 @@ balias cdn "cd ~/projects/nebulab"
 balias cdp "cd ~/projects/personal"
 balias cda "cd ~/projects/app2u"
 balias cdi "cd ~/projects/ied"
+balias sts "start_tcw_server"
+balias stc "start_tcw_client"
 
 # Postgresql alias
 balias createuser "createuser -s -d -R"
@@ -163,4 +165,16 @@ function setup_nebulab_env
   asdf install nodejs lts
   asdf global nodejs lts
   asdf install nodejs 16.13.1
+end
+
+function start_tcw_server
+  cd ~/projects/personal/tcw-store
+  gco api-only
+  make run
+end
+
+function start_tcw_client
+  cd ~/projects/personal/tcw-frontend
+  gco api-only
+  pnpm run dev
 end
