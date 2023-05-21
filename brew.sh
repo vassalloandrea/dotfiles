@@ -6,6 +6,7 @@ formulae=(
     "homebrew/services"
     "homebrew/cask"
     "mongodb/brew"
+    "homebrew/cask-versions" # For Zulu11 in apps
 )
 
 packages=(
@@ -29,6 +30,7 @@ packages=(
     "aws-iam-authenticator"
     "watchman"
     "ngrok"
+    "shared-mime-info"
 )
 
 apps=(
@@ -52,6 +54,7 @@ apps=(
     "notion"
     "remotion"
     "flutter"
+    "zulu11" # For React Native
 )
 
 links=(
