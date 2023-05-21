@@ -4,16 +4,18 @@ set -xg EDITOR "vim"
 # Editor for opening gems
 set -xg BUNDLER_EDITOR "code"
 
-# Update the ANDROID_HOME, this is needed for react native
-set -xg ANDROID_HOME "$HOME/Library/Android/sdk"
-set -xg PATH "$PATH:$ANDROID_HOME/emulator"
-set -xg PATH "$PATH:$ANDROID_HOME/tools"
-set -xg PATH "$PATH:$ANDROID_HOME/tools/bin"
-set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools"
-set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools/latest"
-set -xg PATH "$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
-set -xg PATH "$PATH:$ANDROID_HOME/platform-tools"
+# Update the ANDROID_SDK_ROOT, this is needed for react native
+set -xg ANDROID_SDK_ROOT "$HOME/Library/Android/sdk"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/emulator"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/tools"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/tools/bin"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/cmdline-tools"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
+set -xg PATH "$PATH:$ANDROID_SDK_ROOT/platform-tools"
+set -xg PATH "$PATH:/opt/homebrew/bin"
 set -xg JAVA_HOME (/usr/libexec/java_home)
+set -xg NODE_BINARY (which node)
 
 # Git/Hub
 eval (hub alias -s)
@@ -29,6 +31,7 @@ abbr buc "bundle update --conservative"
 # Ruby/Rails
 abbr r "bundle exec rails server -p 5000"
 abbr rf "bundle exec foreman start -f Procfile.local"
+abbr cf "foreman run bundle exec rails c"
 abbr rp "PORT=5000 bundle exec puma -C config/puma.rb"
 abbr c "bundle exec rails console"
 abbr s "bundle exec rspec"
@@ -69,7 +72,7 @@ balias ga "git add"
 balias gaa "git add ."
 balias gac "git add . && git commit"
 balias gc "git commit"
-balias gsnap "git add . && git commit -m '[SNAPSHOT]'"
+balias gsnap "git add . && git commit -m '[SNAPSHOT]' -n"
 balias gca "git add . && git commit --amend --no-edit"
 balias gcae "git add . && git commit --amend"
 balias gps "git push"
