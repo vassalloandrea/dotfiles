@@ -6,22 +6,23 @@ options=(
     -avh --no-perms
     --exclude ".git"
     --exclude ".gitignore"
+    --exclude "AGENTS.md"
+    --exclude "README.md"
     --exclude "bootstrap.sh"
     --exclude "brew.sh"
-    --exclude "mas.sh"
-    --exclude "custom_app.sh"
     --exclude "macos.sh"
     --exclude "shell.sh"
     --exclude "utils.sh"
+    --exclude "vscode.sh"
+    --exclude ".vscode-extensions"
     --exclude "omf.fish"
-    --exclude "cx"
 )
 
 # Retrieve all the gitignore file and directories that
 # should be excluded from the rsync command
 while read line; do
-  options+=(--exclude "$line")
-done < .gitignore
+    options+=(--exclude "$line")
+done <.gitignore
 
 # Copy all the files and directories to the user home
 # except for the ones included in the options array
@@ -29,17 +30,16 @@ fancy_echo "Copying the dotfiles to the home directory!"
 rsync "${options[@]}" . ~
 
 # Install brew with packages and applications
-sh ./brew.sh
-# Install apple store applications
-sh ./mas.sh
-# Custom installations
-sh ./custom_app.sh
-# Apply MacOS changes
-sh ./macos.sh
+bash ./brew.sh
 # Apply shell changes installing fish
-sh ./shell.sh
-# Configure heroku
-sh ./heroku.sh
+bash ./shell.sh
 
 # Update OMF plugins and aliases
 fish ./omf.fish
+
+# Install VS Code extensions from .vscode-extensions
+bash ./vscode.sh
+
+# macOS preferences are NOT applied automatically.
+# They rebuild the Dock from scratch, so run them on-demand:
+#   bash ./macos.sh

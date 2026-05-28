@@ -10,7 +10,7 @@
 [credential]
   helper = osxkeychain
 [core]
-  editor = vim
+  editor = code
   excludesfile = ~/.gitignore_global
   autocrlf = input
 [color]

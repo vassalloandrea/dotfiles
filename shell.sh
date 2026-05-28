@@ -4,7 +4,7 @@ source ./utils.sh
 
 function add_fish_to_shells() {
     # This is needed since fish isn't a standard shell
-    if ! grep "$(which fish)" /etc/shells > /dev/null 2>&1; then
+    if ! grep "$(which fish)" /etc/shells >/dev/null 2>&1; then
         fancy_echo "Adding fish to the legacy shells!"
 
         sudo bash -c "echo $(which fish) >> /etc/shells"
@@ -15,7 +15,7 @@ function update_shell() {
     # Check if the used shell is already set to fish
     if [[ $SHELL != *"fish"* ]]; then
         # Check if fish is installed
-        if which fish > /dev/null 2>&1; then
+        if which fish >/dev/null 2>&1; then
             fancy_echo "Changing your shell to fish!"
 
             chsh -s $(which fish) $USER
@@ -31,23 +31,20 @@ function install_omf() {
     fi
 }
 
-function install_asdf_plugins() {
-    fancy_echo "Installing asdf version manager plugins (Ruby, NodeJS and Python)"
+function configure_mise() {
+    fancy_echo "Configuring mise to use precompiled Ruby binaries (skip ruby-build)!"
 
-    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-    asdf plugin-add python
+    mise settings ruby.compile=false
 }
 
-function install_asdf_language() {
+function install_mise_language() {
     local name="$1"
     local version="$2"
 
-    if ! asdf list "$name" | grep -Fq "$version"; then
-        fancy_echo "Installing $name $version globally using asdf!"
+    if ! mise ls "$name" 2>/dev/null | grep -Fq "$version"; then
+        fancy_echo "Installing $name $version globally using mise!"
 
-        asdf install "$name" "$version"
-        asdf global "$name" "$version"
+        mise use --global "$name@$version"
     fi
 }
 
@@ -65,9 +62,11 @@ function configure_gitignore_globally() {
 add_fish_to_shells
 update_shell
 install_omf
-install_asdf_plugins
-install_asdf_language "ruby" "3.1.1"
-install_asdf_language "nodejs" "lts"
-install_asdf_language "python" "3.10.3"
+configure_mise
+install_mise_language "ruby" "3.1.1"
+install_mise_language "node" "lts"
+install_mise_language "python" "3.13.2"
+install_mise_language "pnpm" "latest"
+install_mise_language "yarn" "1"
 install_fzf
 configure_gitignore_globally

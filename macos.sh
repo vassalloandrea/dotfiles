@@ -1,26 +1,17 @@
 #!/bin/bash
 
 persistent_applications=(
-    "/Applications/Postman.app"
-    "/Applications/Safari.app"
-    "/Applications/Google Chrome.app"
-    "/System/Applications/Calendar.app"
-    "/Applications/Harvest.app"
-    "/Applications/iTerm.app"
+    "/Applications/Brave Browser.app"
+    "/Applications/Fantastical.app"
     "/Applications/Visual Studio Code.app"
-    "/Applications/WhatsApp.app"
+    "/Applications/Spark Desktop.app"
     "/Applications/Telegram.app"
+    "$HOME/Applications/iTerm.app"
     "/Applications/Slack.app"
-    "/Applications/Loom.app"
-    "/Applications/Notion.app"
-    "/Applications/Spark.app"
-    "/Applications/ImageOptim.app"
-    "/System/Applications/System Preferences.app"
-    "/Applications/Spotify.app"
-    "/Applications/1Password 7.app"
-    "/Applications/Xcode.app"
-    "/Applications/NordVPN.app"
-    "/Applications/Brother iPrint&Scan.app"
+    "/Applications/Linear.app"
+    "/Applications/TickTick.app"
+    "/Applications/Obsidian.app"
+    "/Applications/Bitwarden.app"
 )
 
 ########### UI ###########
@@ -49,22 +40,22 @@ killall Finder
 
 ########### Dock ###########
 
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 54
+# Enable magnification and set the magnified size
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -int 69
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
-# Do not show recent application
+# Do not show recent applications in the Dock
 defaults write com.apple.dock show-recents -bool false
+# Minimize windows into the application icon
+defaults write com.apple.dock minimize-to-application -bool true
 
 # Add persistent applications
 for app in "${persistent_applications[@]}"; do
-  defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
-
-########### Trackpad and mouse ###########
-
-# Enable natural scroll direction
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
 ########### Top corners ###########
 

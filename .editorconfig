@@ -9,5 +9,8 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 80
 
-[*.{sh,markdown,py}]
+[*.{sh,fish,py}]
 indent_size = 4
+
+[*.{md,markdown}]
+indent_size = 2
